@@ -136,10 +136,22 @@
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="main_include.h" />
+    <ClInclude Include="map_.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="setting_SDL2.h" />
+    <ClInclude Include="Snake.h" />
+    <ClInclude Include="Source.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="Food.cpp" />
+    <ClCompile Include="map_.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="setting_SDL2.cpp" />
+    <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

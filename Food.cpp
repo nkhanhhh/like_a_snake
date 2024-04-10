@@ -13,7 +13,7 @@ re_check:
 				goto re_check;
 			}
 		}
-		apple[0] = { x , y , 10 , 10 };
+		berry[0] = { x , y , 10 , 10 };
 	}
 	else {
 		goto re_check;
@@ -22,5 +22,5 @@ re_check:
 
 	void draw_food() {
 		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		SDL_RenderFillRect(renderer, &apple[0]);
+		SDL_RenderFillRect(renderer, &berry[0]);
 	}
