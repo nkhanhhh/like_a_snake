@@ -5,8 +5,8 @@ void create_food() {
 	int x, y;
 	srand(time(NULL));
 re_check:
-	x = (min_ + 80) + +rand() % ((max_x - 80) - (min_ + 80) + 1);
-	y = (min_ + 80) + rand() % ((max_y - 80) - (min_ + 80) + 1);
+	x = rand() % (760 - 20 + 1 ) + 20;
+	y = rand() % (500 - 20 + 1 ) + 20;
 	if (x % 20 == 0 && y % 20 == 0) {
 		for (int i = 0; i < size_snake; i++) {
 			if (x == snake[i].x && y == snake[i].y) {

@@ -88,6 +88,12 @@ RESTART:
 		g_background.Render(renderer, NULL);
 
 		draw_snake();
+		g_snake_head.SetRect(snake[0].x, snake[0].y);
+		g_snake_head.Render(renderer, NULL);
+		for (int i = 1; i < size_snake; i++) {
+			g_snake_body.SetRect(snake[i].x, snake[i].y);
+			g_snake_body.Render(renderer, NULL);
+		}
 		g_food.SetRect(berry[0].x, berry[0].y);
 		g_food.Render(renderer, NULL);
 
