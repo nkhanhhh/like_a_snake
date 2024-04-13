@@ -51,7 +51,8 @@ void move() {
 	}
 }
 
-void draw_snake() {
+void draw_snake() 
+{
 	for (int i = 0; i < size_snake; i++) {
 		if (i == 0) {
 			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
