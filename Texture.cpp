@@ -5,7 +5,8 @@
 #include "Snake.h"
 #include "Food.h"
 
-void draw_textchange(const char* text, int posX, int posY) {
+void draw_textchange(const char* text, int posX, int posY) 
+{
 	TTF_Init();
 	TTF_Font* font = NULL;
 	font = TTF_OpenFont("font/dlxfont_.ttf", 24);

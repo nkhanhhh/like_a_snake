@@ -5,12 +5,14 @@ using namespace std;
 extern SDL_Window* g_window;
 extern SDL_Renderer* g_screen;
 
-BaseObject::BaseObject() {
+BaseObject::BaseObject() 
+{
 	p_object_ = NULL;
 	rect_.x = rect_.y = rect_.w = rect_.h = 0;
 }
 
-BaseObject::~BaseObject() {
+BaseObject::~BaseObject() 
+{
 	Free();
 }
 
@@ -40,12 +42,14 @@ bool BaseObject::loadImg(string path, SDL_Renderer* screen)
 	return load_surface != NULL;
 }
 
-void BaseObject::Render(SDL_Renderer* des, const SDL_Rect* clip) {
+void BaseObject::Render(SDL_Renderer* des, const SDL_Rect* clip) 
+{
 	SDL_Rect renderquad = { rect_.x , rect_.y , rect_.w , rect_.h };
 	SDL_RenderCopy(des, p_object_, clip, &renderquad);
 }
 
-void BaseObject::Free() {
+void BaseObject::Free() 
+{
 	if (p_object_ != NULL) {
 		SDL_DestroyTexture(p_object_);
 		p_object_ = NULL;

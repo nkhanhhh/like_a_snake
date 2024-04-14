@@ -5,17 +5,20 @@
 
 using namespace std;
 
-class BaseObject {
+class BaseObject 
+{
 public:
 	BaseObject();
 	~BaseObject();
-	void SetRect(const int& x, const int& y) {
+	void SetRect(const int& x, const int& y) 
+	{
 		rect_.x = x,
 		rect_.y = y,
 		rect_.w = 20,
 		rect_.h = 20;
 	}
-	SDL_Rect GetRect() const {
+	SDL_Rect GetRect() const 
+	{
 		return rect_;
 	}
 
