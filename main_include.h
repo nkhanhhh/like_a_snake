@@ -36,6 +36,7 @@ extern int size_wall;
 
 #define size_snake_auto 2
 
-enum Direction {
+enum Direction 
+{
 	UP, DOWN, LEFT, RIGHT
 };

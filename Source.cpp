@@ -15,7 +15,8 @@ SDL_Renderer* renderer;
 SDL_Window* window;
 SDL_Event event;
 SDL_Rect berry[50], snake[100], wall[1000];
-BaseObject g_background, g_food, g_wall , g_snake_head , g_snake_body;
+BaseObject g_background, g_food, g_wall  , g_snake_body , g_right_head , g_up_head , g_left_head , g_down_head;
+
 
 void main() {
 RESTART:
@@ -40,18 +41,36 @@ RESTART:
 		return;
 	}
 
-	test = g_snake_head.loadImg("pics/snake_head.png", renderer);
-	if (test == false) {
-		cout << "Can't load head's snake!\n";
-		return;
-	}
-
 	test == g_snake_body.loadImg("pics/snake_body.png", renderer);
 	if (test == false) {
 		cout << "Can't load body's snake!\n";
 		return;
 	}
+
+	test == g_down_head.loadImg("pics/down_head.png", renderer);
+	if (test == false) {
+		cout << "Can't load image!\n";
+		return;
+	}
+
+	test == g_up_head.loadImg("pics/up_head.png", renderer);
+	if (test == false) {
+		cout << "Can't load image!\n";
+		return;
+	}
 	
+	test == g_left_head.loadImg("pics/left_head.png", renderer);
+	if (test == false) {
+		cout << "Can't load image!\n";
+		return;
+	}
+
+	test == g_right_head.loadImg("pics/right_head.png", renderer);
+	if (test == false) {
+		cout << "Can't load image!\n";
+		return;
+	}
+
 
 	while (running) {
 		move();
@@ -88,12 +107,29 @@ RESTART:
 		g_background.Render(renderer, NULL);
 
 		draw_snake();
-		g_snake_head.SetRect(snake[0].x, snake[0].y);
-		g_snake_head.Render(renderer, NULL);
-		for (int i = 1; i < size_snake; i++) {
+		
+		if (dir == RIGHT) {
+			g_right_head.SetRect(snake[0].x, snake[0].y);
+			g_right_head.Render(renderer, NULL);
+		}
+		if (dir == LEFT) {
+			g_left_head.SetRect(snake[0].x, snake[0].y);
+			g_left_head.Render(renderer, NULL);
+		}
+		if (dir == UP) {
+			g_up_head.SetRect(snake[0].x, snake[0].y);
+			g_up_head.Render(renderer , NULL);
+		}
+		if (dir == DOWN) {
+			g_down_head.SetRect(snake[0].x, snake[0].y);
+			g_down_head.Render(renderer, NULL);
+		}
+
+		for (int i = 1; i < size_snake ; i++) {
 			g_snake_body.SetRect(snake[i].x, snake[i].y);
 			g_snake_body.Render(renderer, NULL);
 		}
+		
 		g_food.SetRect(berry[0].x, berry[0].y);
 		g_food.Render(renderer, NULL);
 
