@@ -15,7 +15,9 @@ SDL_Renderer* renderer;
 SDL_Window* window;
 SDL_Event event;
 SDL_Rect berry[50], snake[100], wall[1000];
-BaseObject g_background, g_food, g_wall  , g_snake_body , g_right_head , g_up_head , g_left_head , g_down_head;
+BaseObject g_background, g_food, g_wall,
+g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
+
 
 
 void main() {
@@ -70,6 +72,8 @@ RESTART:
 		cout << "Can't load image!\n";
 		return;
 	}
+	
+
 
 
 	while (running) {
