@@ -17,10 +17,12 @@ bool TextObject::loadFromRendererText(TTF_Font* gFont, SDL_Renderer* screen)
 {
 	// render text surface
 	SDL_Surface* textSurface = TTF_RenderText_Solid(gFont, str_val.c_str(), text_color);
-	if (textSurface != NULL) {
+	if (textSurface != NULL) 
+	{
 		// create texture from surface pixels
 		texture_ = SDL_CreateTextureFromSurface(screen, textSurface);
-		if (texture_ != NULL) {
+		if (texture_ != NULL) 
+		{
 			// get image dimensions
 			width = textSurface->w;
 			height = textSurface->h;
