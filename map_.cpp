@@ -1,6 +1,7 @@
 #include "map_.h"
 #include "main_include.h"
 
+
 void create_map() 
 {
 	for (int i = 0; i <= max_x ; i += 20) 
