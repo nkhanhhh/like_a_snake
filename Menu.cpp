@@ -91,7 +91,8 @@ void TextObject::RenderText(SDL_Renderer* screen, int x, int y)
 int ShowMenu(SDL_Renderer* g_screen,
 	const string& menu1,
 	const string& menu2,
-	const string& img_name) {
+	const string& img_name) 
+{
 
 	char* ch1 = (char*)menu1.c_str();
 	char* ch2 = (char*)menu2.c_str();

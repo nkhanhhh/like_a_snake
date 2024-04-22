@@ -20,70 +20,81 @@ g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 
 
 
-void main() {
+void main() 
+{
 RESTART:
 	set_data();
 	bool test;
 
 	test = g_background.loadImg("pics/backgrounds_in_game.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load background!/n";
 		return;
 	}
 
 	test = g_food.loadImg("pics/berry.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load food!\n";
 		return;
 	}
 
 	test = g_wall.loadImg("pics/wall.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load wall!\n";
 		return;
 	}
 
 	test == g_snake_body.loadImg("pics/snake_body.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load body's snake!\n";
 		return;
 	}
 
 	test == g_down_head.loadImg("pics/down_head.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load image!\n";
 		return;
 	}
 
 	test == g_up_head.loadImg("pics/up_head.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load image!\n";
 		return;
 	}
 	
 	test == g_left_head.loadImg("pics/left_head.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load image!\n";
 		return;
 	}
 
 	test == g_right_head.loadImg("pics/right_head.png", renderer);
-	if (test == false) {
+	if (test == false) 
+	{
 		cout << "Can't load image!\n";
 		return;
 	}
 	
 
-
-
-	while (running) {
+	while (running) 
+	{
 		move();
-		if (snake[0].x == berry[0].x && snake[0].y == berry[0].y) {
+		if (snake[0].x == berry[0].x && snake[0].y == berry[0].y) 
+		{
 			eat();
 			create_food();
 		}
-		for (int i = 0; i < size_wall; i++) {
-			if (snake[0].x == wall[i].x && snake[0].y == wall[i].y) {
+		for (int i = 0; i < size_wall; i++) 
+		{
+			if (snake[0].x == wall[i].x && snake[0].y == wall[i].y) 
+			{
 				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/background_KO.png");
 				switch (ret_menu) {
 				case 1:
@@ -93,8 +104,10 @@ RESTART:
 				}
 			}
 		}
-		for (int i = 4; i < size_snake; i++) {
-			if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+		for (int i = 4; i < size_snake; i++) 
+		{
+			if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) 
+			{
 				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/background_KO.png");
 				switch (ret_menu) {
 				case 1:
@@ -112,24 +125,29 @@ RESTART:
 
 		draw_snake();
 		
-		if (dir == RIGHT) {
+		if (dir == RIGHT) 
+		{
 			g_right_head.SetRect(snake[0].x, snake[0].y);
 			g_right_head.Render(renderer, NULL);
 		}
-		if (dir == LEFT) {
+		if (dir == LEFT) 
+		{
 			g_left_head.SetRect(snake[0].x, snake[0].y);
 			g_left_head.Render(renderer, NULL);
 		}
-		if (dir == UP) {
+		if (dir == UP) 
+		{
 			g_up_head.SetRect(snake[0].x, snake[0].y);
 			g_up_head.Render(renderer , NULL);
 		}
-		if (dir == DOWN) {
+		if (dir == DOWN) 
+		{
 			g_down_head.SetRect(snake[0].x, snake[0].y);
 			g_down_head.Render(renderer, NULL);
 		}
 
-		for (int i = 1; i < size_snake ; i++) {
+		for (int i = 1; i < size_snake ; i++) 
+		{
 			g_snake_body.SetRect(snake[i].x, snake[i].y);
 			g_snake_body.Render(renderer, NULL);
 		}
@@ -137,7 +155,8 @@ RESTART:
 		g_food.SetRect(berry[0].x, berry[0].y);
 		g_food.Render(renderer, NULL);
 
-		for (int i = 0; i < size_wall; i++) {
+		for (int i = 0; i < size_wall; i++) 
+		{
 			g_wall.SetRect(wall[i].x, wall[i].y);
 			g_wall.Render(renderer, NULL);
 		}

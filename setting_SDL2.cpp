@@ -1,7 +1,8 @@
 #include "main_include.h"
 #include "map_.h"
 
-void set_data() {
+void set_data() 
+{
 	SDL_Init(SDL_INIT_EVERYTHING);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 	window = SDL_CreateWindow("Like a snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,

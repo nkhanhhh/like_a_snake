@@ -1,49 +1,60 @@
 #include "Snake.h"
 #include "main_include.h"
 
-void move() {
-	while (SDL_PollEvent(&event)) {
+void move() 
+{
+	while (SDL_PollEvent(&event)) 
+	{
 		if (event.type == SDL_QUIT) {
 			running = false;
 		}
-		if ((event.key.keysym.sym == 's') && dir != UP) {
+		if ((event.key.keysym.sym == 's') && dir != UP) 
+		{
 			dir = DOWN;
 		}
-		if (event.key.keysym.sym == 'w' && dir != DOWN) {
+		if (event.key.keysym.sym == 'w' && dir != DOWN) 
+		{
 			dir = UP;
 		}
-		if (event.key.keysym.sym == 'a' && dir != RIGHT) {
+		if (event.key.keysym.sym == 'a' && dir != RIGHT) 
+		{
 			dir = LEFT;
 		}
-		if (event.key.keysym.sym == 'd' && dir != LEFT) {
+		if (event.key.keysym.sym == 'd' && dir != LEFT) 
+		{
 			dir = RIGHT;
 		}
 	}
 
-	switch (dir) {
+	switch (dir) 
+	{
 	case DOWN:
-		for (int i = size_snake; i > 0; i--) {
+		for (int i = size_snake; i > 0; i--) 
+		{
 			snake[i] = snake[i - 1];
 		}
 		snake[0].y += 20;
 		break;
 
 	case UP:
-		for (int i = size_snake; i > 0; i--) {
+		for (int i = size_snake; i > 0; i--) 
+		{
 			snake[i] = snake[i - 1];
 		}
 		snake[0].y -= 20;
 		break;
 
 	case LEFT:
-		for (int i = size_snake; i > 0; i--) {
+		for (int i = size_snake; i > 0; i--) 
+		{
 			snake[i] = snake[i - 1];
 		}
 		snake[0].x -= 20;
 		break;
 
 	case RIGHT:
-		for (int i = size_snake; i > 0; i--) {
+		for (int i = size_snake; i > 0; i--) 
+		{
 			snake[i] = snake[i - 1];
 		}
 		snake[0].x += 20;
@@ -53,19 +64,23 @@ void move() {
 
 void draw_snake() 
 {
-	for (int i = 0; i < size_snake; i++) {
-		if (i == 0) {
+	for (int i = 0; i < size_snake; i++) 
+	{
+		if (i == 0) 
+		{
 			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 			SDL_RenderFillRect(renderer, &snake[0]);
 		}
-		else {
+		else 
+		{
 			SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 			SDL_RenderFillRect(renderer, &snake[i]);
 		}
 	}
 }
 
-void eat() {
+void eat() 
+{
 	size_snake++;
 	score += 10;
 }

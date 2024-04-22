@@ -8,7 +8,8 @@ void create_food()
 re_check:
 	x = rand() % (760 - 20 + 1 ) + 20;
 	y = rand() % (500 - 20 + 1 ) + 20;
-	if (x % 20 == 0 && y % 20 == 0) {
+	if (x % 20 == 0 && y % 20 == 0) 
+	{
 		for (int i = 0; i < size_snake; i++) 
 		{
 			if (x == snake[i].x && y == snake[i].y) 

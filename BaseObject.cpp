@@ -26,16 +26,19 @@ bool BaseObject::loadImg(string path, SDL_Renderer* screen)
 			SDL_MapRGB(load_surface->format,
 				167, 175, 180));
 		new_texture = SDL_CreateTextureFromSurface(screen, load_surface);
-		if (new_texture != NULL) {
+		if (new_texture != NULL) 
+		{
 			rect_.w = load_surface->w;
 			rect_.h = load_surface->h;
 		}
-		else {
+		else 
+		{
 			cout << "Can't load the image!\n";
 		}
 		SDL_FreeSurface(load_surface);
 	}
-	else {
+	else 
+	{
 		cout << "Can't load the image!\n";
 	}
 	p_object_ = new_texture;
@@ -50,7 +53,8 @@ void BaseObject::Render(SDL_Renderer* des, const SDL_Rect* clip)
 
 void BaseObject::Free() 
 {
-	if (p_object_ != NULL) {
+	if (p_object_ != NULL) 
+	{
 		SDL_DestroyTexture(p_object_);
 		p_object_ = NULL;
 		rect_.w = rect_.h = 0;

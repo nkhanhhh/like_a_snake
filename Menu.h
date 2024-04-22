@@ -11,7 +11,8 @@ int ShowMenu(SDL_Renderer* g_screen,
 	const string& menu2,
 	const string& img_name);
 
-class TextObject {
+class TextObject 
+{
 private:
 	string str_val;
 	SDL_Color text_color;
@@ -22,7 +23,8 @@ public:
 	TextObject();
 	~TextObject();
 
-	enum TextColor {
+	enum TextColor 
+	{
 		RED_TEXT = 0,
 		WHITE_TEXT = 1,
 		BLACK_TEXT = 2,
@@ -36,17 +38,21 @@ public:
 
 	void RenderText(SDL_Renderer* screen, int x, int y);
 
-	int getWidth() const {
+	int getWidth() const 
+	{
 		return width;
 	}
-	int getHeight() const {
+	int getHeight() const 
+	{
 		return height;
 	}
 
-	void SetText(const string& text) {
+	void SetText(const string& text) 
+	{
 		str_val = text;
 	}
-	string GetText() const {
+	string GetText() const 
+	{
 		return str_val;
 	}
 };
