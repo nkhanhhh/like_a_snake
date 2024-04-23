@@ -19,7 +19,6 @@ BaseObject g_background, g_food, g_wall,
 g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 
 
-
 void main() 
 {
 RESTART:

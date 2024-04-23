@@ -1,7 +1,6 @@
 #include "Snake.h"
 #include "main_include.h"
 
-
 void move() 
 {
 	while (SDL_PollEvent(&event)) 
