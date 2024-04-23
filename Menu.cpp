@@ -15,7 +15,6 @@ TextObject::~TextObject(void)
 
 bool TextObject::loadFromRendererText(TTF_Font* gFont, SDL_Renderer* screen) 
 {
-
 	// render text surface
 	SDL_Surface* textSurface = TTF_RenderText_Solid(gFont, str_val.c_str(), text_color);
 	if (textSurface != NULL) 
