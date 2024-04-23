@@ -5,6 +5,8 @@
 #include "Texture.h"
 #include "Food.h"
 #include "Snake.h"
+#include "main_include.h"
+#include "map_.h"\
 #undef main
 using namespace std;
 
@@ -22,7 +24,26 @@ g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 void main() 
 {
 RESTART:
-	set_data();
+	// create map
+	size_wall = 0;
+	create_map();
+
+	// snake head
+	snake[0] = { 500 , 200 , 10 , 10 };
+
+	// snake body
+	size_snake = size_snake_auto;
+
+	// create berries on map
+	berry[0] = { 500 , 100 , 10 , 10 };
+
+	// score
+	score = 0;
+
+	// setting newgame
+	running = true;
+	dir = DOWN;
+
 	bool test;
 
 	test = g_background.loadImg("pics/backgrounds_in_game.png", renderer);
@@ -94,7 +115,7 @@ RESTART:
 		{
 			if (snake[0].x == wall[i].x && snake[0].y == wall[i].y) 
 			{
-				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/background_KO.png");
+				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/game_over.png");
 				switch (ret_menu) {
 				case 1:
 					goto EXIT;
@@ -107,7 +128,7 @@ RESTART:
 		{
 			if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) 
 			{
-				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/background_KO.png");
+				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/game_over.png");
 				switch (ret_menu) {
 				case 1:
 					goto EXIT;
