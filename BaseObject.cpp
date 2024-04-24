@@ -5,7 +5,7 @@ using namespace std;
 
 extern SDL_Window* g_window;
 extern SDL_Renderer* g_screen;
-
+ 
 
 BaseObject::BaseObject() 
 {

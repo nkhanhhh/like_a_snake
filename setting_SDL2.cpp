@@ -2,7 +2,8 @@
 #include "map_.h"\
 
 
-void set_up() {
+void set_up_window() 
+{
 	SDL_Init(SDL_INIT_EVERYTHING);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 	window = SDL_CreateWindow("Like a snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
@@ -13,10 +14,12 @@ void set_up() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
+
 void set_data() 
 {
 	
-
+	
+	
 	// create map
 	size_wall = 0;
 	create_map();
@@ -37,3 +40,4 @@ void set_data()
 	running = true;
 	dir = DOWN;
 }
+

@@ -23,12 +23,24 @@ g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 
 void main() 
 {
+	
+	set_up_window();
 
-	set_up();
+	SDL_Init(SDL_INIT_AUDIO);
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) {
+		cout << "Audio error!\n" << Mix_GetError();
+	}
+	Mix_Music* inGameMusic = Mix_LoadMUS("audio/theme_song.mp3");
+	Mix_Chunk* eating = Mix_LoadWAV("audio/eating.wav");
+	Mix_Chunk* lose = Mix_LoadWAV("audio/die.wav");
+
+	Mix_PlayMusic(inGameMusic, -1);
 
 RESTART:
 	
 	set_data();
+
+	Mix_PlayMusic(inGameMusic, -1);
 
 	bool test;
 
@@ -96,11 +108,13 @@ RESTART:
 		{
 			eat();
 			create_food();
+			Mix_PlayChannel(1, eating, 0);
 		}
 		for (int i = 0; i < size_wall; i++) 
 		{
 			if (snake[0].x == wall[i].x && snake[0].y == wall[i].y) 
 			{
+				Mix_PlayChannel(1, lose, 0);
 				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/game_over.png");
 				switch (ret_menu) {
 				case 1:
@@ -114,6 +128,7 @@ RESTART:
 		{
 			if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) 
 			{
+				Mix_PlayChannel(1, lose, 0);
 				int ret_menu = ShowMenu(renderer, "Play again", "Exit", "pics/game_over.png");
 				switch (ret_menu) {
 				case 1:
