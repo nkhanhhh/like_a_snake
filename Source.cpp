@@ -6,7 +6,7 @@
 #include "Food.h"
 #include "Snake.h"
 #include "main_include.h"
-#include "map_.h"\
+#include "map_.h"
 #undef main
 using namespace std;
 
@@ -23,26 +23,12 @@ g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 
 void main() 
 {
+
+	set_up();
+
 RESTART:
-	// create map
-	size_wall = 0;
-	create_map();
-
-	// snake head
-	snake[0] = { 500 , 200 , 10 , 10 };
-
-	// snake body
-	size_snake = size_snake_auto;
-
-	// create berries on map
-	berry[0] = { 500 , 100 , 10 , 10 };
-
-	// score
-	score = 0;
-
-	// setting newgame
-	running = true;
-	dir = DOWN;
+	
+	set_data();
 
 	bool test;
 
