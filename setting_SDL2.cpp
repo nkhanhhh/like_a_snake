@@ -2,6 +2,7 @@
 #include "map_.h"\
 
 
+
 void set_up_window() 
 {
 	SDL_Init(SDL_INIT_EVERYTHING);

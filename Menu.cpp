@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "main_include.h"
 
+
 TextObject::TextObject(void) 
 {
 	text_color.r = 255;
