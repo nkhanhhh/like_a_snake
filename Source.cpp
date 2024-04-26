@@ -21,10 +21,12 @@ BaseObject g_background, g_food, g_wall,
 g_snake_body, g_right_head, g_up_head, g_left_head, g_down_head;
 
 
+
 void main() 
 {
 	
 	set_up_window();
+
 
 	SDL_Init(SDL_INIT_AUDIO);
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) {
@@ -35,6 +37,7 @@ void main()
 	Mix_Chunk* lose = Mix_LoadWAV("audio/die.wav");
 
 	Mix_PlayMusic(inGameMusic, -1);
+
 
 RESTART:
 	
@@ -190,6 +193,8 @@ RESTART:
 		SDL_RenderPresent(renderer);
 		SDL_Delay(100);
 	}
+
+
 
 EXIT:
 	return;

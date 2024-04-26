@@ -19,8 +19,6 @@ void set_up_window()
 void set_data() 
 {
 	
-	
-	
 	// create map
 	size_wall = 0;
 	create_map();
