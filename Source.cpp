@@ -29,7 +29,8 @@ void main()
 
 
 	SDL_Init(SDL_INIT_AUDIO);
-	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) {
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) 
+	{
 		cout << "Audio error!\n" << Mix_GetError();
 	}
 	Mix_Music* inGameMusic = Mix_LoadMUS("audio/theme_song.mp3");

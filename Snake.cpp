@@ -5,7 +5,8 @@ void move()
 {
 	while (SDL_PollEvent(&event)) 
 	{
-		if (event.type == SDL_QUIT) {
+		if (event.type == SDL_QUIT) 
+		{
 			running = false;
 		}
 		if ((event.key.keysym.sym == 's') && dir != UP) 
