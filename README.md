@@ -1,5 +1,3 @@
-![image](https://github.com/nkhanhhh/like_a_snake/assets/162419037/95ae81fe-0881-4454-a1bc-5bca14ba3265)# ***Like A Snake***
-
 ## **Introduction**
 
 + Họ và tên: Phạm Nam Khánh - K68CB - UET
